@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Pacifico&family=Rubik+Beastly&display=swap" rel="stylesheet">
+    <title>calculator</title>
+    <style>
+        #container{
+            text-align: center;
+            margin-top: 20px;
+          
+        }
+        table{
+            margin:auto;
+            
+        }
+        input{
+            font-size: 34px;
+            border:4px solid black;
+            border-radius: 10px;
+        }
+        button{
+            font-size: 40px;
+            background-color: orangered;
+            width:103px;
+            height:80px;
+            border-radius: 10px;
+            border: 4px solid black;
+            font-family: 'Rubik Beastly', cursive;
+            box-shadow: rgba(226, 95, 19, 0.9) 0px 50px 100px -20px, rgba(187, 22, 22, 0.90) 0px 30px 60px -30px, rgba(214, 75, 11, 0.90) 0px -2px 6px 0px inset;
+        }
+        .calculator{
+            display:inline-block;
+            background-color: red;
+            padding:23px;
+            border-radius: 10px;
+            border:5px solid black;
+            font-family: 'Rubik Beastly', cursive;
+            box-shadow: rgba(226, 95, 19, 0.9) 0px 50px 100px -20px, rgba(187, 22, 22, 0.90) 0px 30px 60px -30px, rgba(214, 75, 11, 0.90) 0px -2px 6px 0px inset;
+        }
+        h1{
+            width: 20%;
+            font-size: 40px;
+            color:black;
+            /* display:inline; */
+            margin:auto;
+            font-family: 'Bree Serif', serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        
+           <h1> CALCULATOR</h1>
+        
+    
+    
+     <div class="calculator">
+        <input type="text" name="screen" id="screen">
+     <table>
+         <tr>
+            <td><button>(</button></td>
+            <td><button>)</button></td>
+            <td><button>C</button></td>
+            <td><button>%</button></td>
+         </tr>
+         <tr>
+            <td><button>9</button></td>
+            <td><button>8</button></td>
+            <td><button>7</button></td>
+            <td><button>X</button></td>
+         </tr>
+         <tr>
+            <td><button>6</button></td>
+            <td><button>5</button></td>
+            <td><button>4</button></td>
+            <td><button>-</button></td>
+         </tr>
+         <tr>
+            <td><button>3</button></td>
+            <td><button>2</button></td>
+            <td><button>1</button></td>
+            <td><button>+</button></td>
+         </tr>
+         <tr>
+            <td><button>0</button></td>
+            <td><button>.</button></td>
+            <td><button>/</button></td>
+            <td><button>=</button></td>
+         </tr>
+        
+        
+     </table>
+    </div>
+    </div>
+</body>
+</html>
+<script>
+    var screen = document.getElementById("screen");
+    buttons=document.querySelectorAll("button");
+    var screenValue=""
+    for(item of buttons){
+        item.addEventListener("click",function(e){
+            buttonText=e.target.textContent;
+            console.log("Button text is",buttonText)
+            if(buttonText=="X"){
+                buttonText="*";
+                screenValue+=buttonText;
+                screen.value0=screenValue;
+                 
+            }
+            else if(buttonText=="C")
+            {
+                screenValue="";
+                screen.value=screenValue;
+                 
+            }
+            
+            else if(buttonText=="=")
+            screen.value=eval(screenValue);
+            else {
+                screenValue+=buttonText;
+                screen.value=screenValue;
+            }
+        })
+    }
+</script>
